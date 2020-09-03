@@ -95,7 +95,7 @@ a:active{
 }
 input:focus{
      /**7.5伪类选择器，扩展，每个标签可能适用的选择器不一样，要夺取尝试，建议使用第三方的ui插件*/
-    background:red;
+    /* background:red; */
     outline: none;
 }
 input:hover{
@@ -119,7 +119,7 @@ div:target{
 } */
 :root{
     /**7.6根目录的伪类选择器，与html标签的效果一样*/
-    background:red;
+    /* background:red; */
 }
 div[id='faklf']{
     background:red;
@@ -297,3 +297,186 @@ div>input[type="text"]+span:after{
 
 /**  8.4 css预处理器
    .less 可以按层级关系去写，用插件可以自动生成.css文件 然后引用.css文件就可以了*/
+
+h5{
+    /**  8.5 字体 设置，如果没有第一个，会依次向后面匹配*/
+    font-family:"情人字体", Arial, "Helvetica Neue", Helvetica, sans-serif;       
+}   
+@font-face{
+    font-family: "情人字体";
+    /*otf ttf woff*/
+    src:url("./情人字体/Clb-Valentine.ttf");
+    /* src:url("./情人字体/Clb-Valentine.otf") format("opentype")  中文字体较大，不建议使用*/
+}
+h5{
+    /**  8.6 字重 字重指字的粗细定义。取值范围 normal | bold | bolder | lighter | 100 ~900。
+
+400对应 normal,700对应 bold ，一般情况下使用 bold 或 normal 较多。*/
+    font-weight: bold;      
+ }     
+ h5{
+    /**  8.7 字号 字号用于控制字符的显示大小，包括 xx-small | x-small | small | meidum | large | x-large | xx-large
+    
+    百分数 百分数是子元素相对于父元素的大小，如父元素是20px，子元素设置为 200%即为你元素的两倍大小。
+    
+    em单位等同于百分数单位。 font-size: 5em; */
+    font-size: 500%;     
+ }  
+ h5{
+    /**  8.7 
+    颜色 1.color:red;
+    2.使用十六进制网页颜色  color:#ddffde
+    3.使用RGB颜色 color:rgb(38, 149, 162);采用的是红绿蓝三原色的交杂
+    4.透明颜色
+    透明色从 0~1 间，表示透明到不透明color:rgba(38, 149, 162,.2);最后一位的取值范围是0-1
+
+     */
+     /* color:rgba(38, 149, 162,.2);      */
+ }  
+ h5{
+    /**  8.8 行高 2倍行高 一般对应字体大小设置倍数行高*/
+    font-size: 15px;
+    line-height: 2em;    
+ }       
+ h5{
+    /**  8.9 倾斜  <em></em>标签默认自带倾斜样式 可取消倾斜样式：font-style:normal*/
+    font-style: italic;   
+ }  
+ h5{
+    /**  8.10 组合应用  */
+    /**  1.一般写法  */
+    /* font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    line-height: 1.4em;
+    font-weight: 200;
+    font-style: italic;   */
+    /**  2.简写写法  这里注意第三个大小和第四个字体完全没写的话，样式整体出不来，但是前两个字重和字的样式没写，不影响大小和样式的显示
+    建议使用*/
+    font:bold italic 45px/1.5em 'Courier New', Courier, monospace;
+ }    
+ h5{
+    /**  8.11 字符大小写转化 这里是小型大写 没有变的很大*/
+    /* font-variant:small-caps;  */
+    /*，
+    普通的大写 uppercase  
+    小写  lowercase 
+    每个单词首字母变大写   capitalize  */ 
+    text-transform: capitalize;  
+ }     
+ h5{
+    /**  8.12 文本线条 下划线 underline 
+    上划线 overline
+    删除线 line-through*/ 
+    /* text-decoration: line-through;   */
+ } 
+ a,u{
+     /**  8.13 超链接 和u标签下划线去掉，*/ 
+     text-decoration:none;
+ }  
+ h5{
+    /**  8.14  文本阴影 颜色 水平偏移量 垂直偏移量 模糊量(值越小，模糊程度越低)
+    为防止字体生硬，可以适当调整字体模糊度*/ 
+
+    color:rgba(0, 0, 0, .8);
+    text-shadow:rgba(150, 9, 238, 0.2)  5px 5px 1px; 
+ }     
+ h3{
+     /*8.15 文本空格  一般标签中无论有多少空格，最终只显示一个空格， 如果想按原样式显示，
+     1.可以使用pre标签换行也会被保留
+     2.使用空白处理换行也会被保留 效果相同 
+     pre  pre-wrap 效果类似 
+     pre-line  把空白合并保留换行符*/
+     white-space:pre-line;
+ }
+ #span{
+     /*8.15 文本换行 这里是禁止换行 用在标题过长换行占据样式的场景 但是会溢出*/
+     border:1xp solid black;
+     /* width: 200px; */
+     /* white-space: nowrap; */
+     /*这里是隐藏溢出的文字*/
+     /* overflow: hidden; */
+     /*这里是溢出的文字会显示成笑点 。。。表示还有更多的内容*/
+     /* text-overflow: ellipsis; */
+ }
+ #span{
+    /*8.16 文本缩进 这里是两个字符，会按照字的大小进行变换，但最终是显示缩进两个字符*/
+    /* text-indent: 2em; */
+    /*8.17 文本对齐 
+    center居中
+     right 右对齐
+     left 左对齐*/
+    /* text-align: center; */
+    /*8.18 文本垂直对齐 
+    top 顶部对齐 
+    bottom 底部对齐
+    middle 垂直居中
+    可以设置具体的像素值，正负都可以*/
+    /* vertical-align: middle; */
+}
+#span{
+    /*8.19 字符间距*/
+    /* letter-spacing: 20px; */
+    /*8.20 单词间距*/
+    /* word-spacing: 20px; */
+    /*8.21 竖向
+    vertical-lr 从左到右竖向排列
+    vertical-rl 从右到左竖向排列
+    horizontal-tb 从上到下*/
+    writing-mode: horizontal-tb;
+}
+
+/*9 盒子模型  上 右 下 左
+9.1 margin 外边距  
+可以有正值 也可以有负值
+ margin:20px 指的是一次控制四个边 均为20px 推荐
+ margin: 30px 50px 指的是上下30px 左右50px
+ margin-left:30px 单独控制某一边 这是左边
+ margin: 30px 50px 303px 5px 四边控制
+
+ 左右均自动可以产生元素居中的效果
+margin-left:auto;
+margin-right:auto;这里填写数值的话还要计算边线的像素
+简写为
+margin:0 auto;
+
+***边距合并
+上面元素的margin-bottom:20px
+下面元素的margin-top:30px
+两元素之间的真实距离只有30px 会合并取边距较大的那个，不是两个相加，这里要注意 常用于列表项 这里是合理的
+
+9.2  padding 内边距 
+ 上 右 下 左  与外边距类似
+article{
+    border:solid 2px black;
+    width:300px;
+    height:300px;
+    padding:50px;
+}
+实际模型会有352*352的大小
+
+
+
+***可以使用盒子的大小定义
+article{
+    border:solid 2px black;
+    width:300px;
+    height:300px;
+    padding:50px;
+    box-sizing:border-box;
+}
+****这里盒子始终保持在大小300*300，内部边距的改变只会在内部进行操作，不会再外部进行延伸
+
+9.3 边框线的样式 普通的文本也可以边框设置
+border-style:double;双线
+border-style:solid;实线
+border-style:groove;立体
+border-width:30px;边框宽度
+border-top-style:double;顶部双线
+border-bottom-style:double;顶部双线
+border-color:red;边框的颜色控制，这里是四个边同步控制，可以分别控制
+border:solid 30px black ;
+border-top:solid 30px black;
+。。。。。
+
+
+*/
